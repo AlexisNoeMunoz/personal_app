@@ -12,9 +12,8 @@ services:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: development 
    
-    ruby:
-        build: .               
-        image: alexisnoe27/web:master
+    ruby:                      
+        image: alexisnoe27/personal_app:master
         container_name: 'ruby'        
         command: bash -c ' 
             cd rails_app &&        

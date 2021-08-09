@@ -1,0 +1,29 @@
+@import 'config/variables';
+
+.ICON {
+    width: 3em;
+    height: 3em;
+    display: inline-block;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    $icons: close, arrow;
+
+    @each $icon in $icons {
+        &.ICON--#{$icon} {
+            background-image: image-url('icons/#{$icon}.svg');
+        }
+    }
+
+    $styles: light;
+
+    @each $style in $styles {
+        &.ICON--STYLE--#{$style} {
+            @if $style==light {
+                filter: $FILTER--ULTRA--LIGHT;
+            }
+        }        
+    }
+}

@@ -1,0 +1,118 @@
+@import 'config/variables';
+
+.home__skills {
+    background-color: $COLOR--ULTRA--LIGHT;
+    padding: 1.5em;      
+
+    @media screen and (min-width: $MDW) {
+        padding: 3em;
+    }
+
+    &__title {    
+        @media screen and (max-width: $MDW) {
+            display: none;
+        }
+    }
+
+    &__grid {    
+        grid-template-columns: repeat(2, 1fr);
+    
+        @media screen and (min-width: $XSW) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    
+        @media screen and (min-width: $SMW) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    
+        @media screen and (min-width: $MDW) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media screen and (min-width: $LGW) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+
+    &__box {    
+        height: 100%;
+        min-height: 8em;
+        padding: 1em;
+    
+        border-radius: 10px;
+        background-color: $COLOR--DARK;
+    
+        grid-template-rows: 1fr auto;
+    
+        @media screen and (min-width: $LGW) {
+            min-height: 10em;
+        }
+        @media screen and (min-width: $XLGW) {
+            min-height: 12em;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        max-width: 7em;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation-name: animation__home__skills__img;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    
+        $skills: html, css, sass, responsive_design, js, react, redux,
+            jquery, ajax, mysql, mongodb, ruby,
+            ruby_on_rails, python, java, git, docker;
+    
+        @each $img in $skills {
+            &.home__skills__img--#{$img} {
+                background-image: image-url('home/skills/#{$img}.svg');
+                animation-duration: random(4) + index($skills, $img) + 4s;
+            }
+        }
+    
+        @media screen and (min-width: $LGW) {
+            max-width: 10em;
+        }
+        @media screen and (min-width: $XLGW) {
+            max-width: 12em;
+        }
+    }
+
+    &__name.TEXT {    
+        font-weight: bold;
+        width: 100%;
+        font-size: 1em;
+    
+        @media screen and (min-width: $LGW) {
+            font-size: 1.2em;
+        }    
+        @media screen and (min-width: $XLGW) {
+            font-size: 1.5em;        
+        }
+    }
+}
+
+@keyframes animation__home__skills__img {
+    0%,
+    90%,
+    100% {
+        transform: translate(0, 0) scale(100%, 100%);
+    }
+
+    93% {
+        transform-origin: center bottom;
+        transform: rotate(-30deg);
+    }
+
+    95% {
+        transform: translate(0, -0.5em) scale(120%, 120%);
+    }
+
+    98% {
+        transform: rotate(30deg);
+    }
+}

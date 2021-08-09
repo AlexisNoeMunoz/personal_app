@@ -13,10 +13,3 @@ export default function Router() {
         </BrowserRouter>                  
     )
 }
-/*
-    # nombre
-    # logros
-    # lenguajes
-    # portafolio
-    # contacto 
-*/

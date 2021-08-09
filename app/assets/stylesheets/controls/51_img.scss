@@ -1,0 +1,13 @@
+@import 'config/variables';
+
+.IMG {
+    width: 100%;
+    
+    &.IMG--RADIUS {
+        border-radius: 5px;
+    }
+    &.IMG--SHADOW {
+        box-shadow: 0px 0px 10px $COLOR--DARK;
+        margin: 1px;
+    }
+}

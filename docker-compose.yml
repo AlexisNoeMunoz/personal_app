@@ -13,7 +13,7 @@ services:
             MYSQL_DATABASE: development 
    
     ruby:                      
-        image: alexisnoe27/personal_app:master
+        image: alexisnoe27/personal_app:dev
         container_name: 'ruby'        
         command: bash -c ' 
             cd rails_app &&        

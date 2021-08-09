@@ -1,0 +1,17 @@
+@import 'config/variables';
+
+.TEXT{
+    color: $COLOR--DARK;
+    font-size: 1.2em;
+    
+    @media screen and (min-width: $LGW) {
+        font-size: 1.5em;            
+    }
+    @media screen and (min-width: $XLGW) {
+        font-size: 2em;            
+    }
+
+    &.TEXT--LIGHT{
+        color: $COLOR--ULTRA--LIGHT;
+    }
+}

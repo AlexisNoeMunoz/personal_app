@@ -1,0 +1,74 @@
+@import 'config/variables';
+@import 'config/zindex';
+
+.MODAL {
+    $pad: 1.5em;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: $COLOR--LIGHT;
+    z-index: $zi-controls--modal;
+
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+
+    animation-name: animation__modal;
+    animation-duration: 0.5s;
+
+    &.MODAL--HIDE {
+        animation-name: animation__modal__reverse;        
+        opacity: 0;
+    }
+
+    @media screen and (min-width: $MDW) {
+        grid-template-rows: auto 1fr;
+    }
+
+    &__SCROLL {
+        padding: 1.5em;
+
+        @media screen and (min-width: $MDW) {
+            padding: 1.5em 3em;
+            padding-top: 0em;
+        }
+    }
+
+    &__CLOSE__BUTTON {
+        width: 100%;
+
+        @media screen and (min-width: $MDW) {
+            grid-row-start: 1;
+            width: 3.5em;
+            height: 3.5em;
+            margin: 1.5em;
+            border-radius: 100%;
+            justify-self: end;
+        }
+
+        &__ICON {
+            filter: $FILTER--ULTRA--LIGHT;
+        }
+    }
+}
+
+@keyframes animation__modal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animation__modal__reverse {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

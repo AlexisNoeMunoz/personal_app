@@ -1,0 +1,137 @@
+@import 'config/variables';
+
+.home__achievements {
+    padding: 1.5em;
+    background-color: $COLOR--LIGHT;
+    grid-template-rows: auto minmax(60%, max-content);
+    gap: 2em;
+
+    @media screen and (min-width: $MDW) {
+        padding: 3em;
+        gap: 4em;
+    }
+
+    &__grid {
+        max-width: 30em;
+        grid-template-columns: 1fr;
+        grid-gap: 1.5em;
+        align-self: start;
+
+        @media screen and (min-width: $MDW) {
+            max-width: 70em;
+            grid-gap: 2.5em;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (min-width: $XLGW) {
+            max-width: 100em;
+            grid-gap: 3em;
+        }
+    }
+
+    &__modal__grid {
+        max-width: 120em;
+        width: 100%;
+        grid-template-columns: 1fr;
+
+        @media screen and (min-width: $MDW) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__cluster {
+            grid-template-rows: auto 1fr;
+            align-items: start;
+        }
+    }
+}
+
+.home__achievement {
+    &__button {
+
+        &.BUTTON_GRID {
+            grid-auto-flow: column;
+            grid-template-columns: 1fr auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 5px $COLOR--DARK;
+            background-color: $COLOR--DARK;
+            padding: 0.5em;
+
+            width: 100%;
+            min-height: 7em;
+
+            @media screen and (min-width: $SMW) {
+                min-height: 9em;
+            }
+
+            @media screen and (min-width: $MDW) {
+                min-height: 10em;
+            }
+
+            @media screen and (min-width: $LGW) {
+                min-height: 12em;
+            }
+
+            @media screen and (min-width: $XLGW) {
+                min-height: 14em;
+            }
+        }
+
+        &:hover &__arrow {
+            animation-name: animation__home__achievements__arrow--hover;
+            animation-duration: 0.3s;
+        }
+
+        &__arrow {
+            margin: 1em;            
+        }
+
+        &__img {
+            height: 100%;
+            width: 100%;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border-radius: 5px;
+            padding: 1em;
+
+            &--boschcamp_challenge {
+                background-image: image-url('home/achievements/BoschCamp.png');
+                background-color: #211F20;
+            }
+
+            &--ultra_hackathon {
+                background-image: image-url('home/achievements/UltraHackathon.png');
+                background-color: #1B1D34;
+            }
+
+            &--dgeti {
+                background-image: image-url('home/achievements/ConcursoDGETI.png');
+                background-color: #D6D6D6;
+            }
+
+            &--inteligene {
+                background-image: image-url('home/achievements/InteliGene.svg');
+                background-color: #d7d7d7;
+                background-origin: content-box;
+            }
+        }
+    }
+}
+
+@keyframes animation__home__achievements__arrow--hover {
+
+    0%,
+    100% {
+        transform: scaleY(100%);
+    }
+
+    50% {
+        transform: scaleY(180%);
+    }
+
+    75% {
+        transform: scaleY(80%);
+    }
+}

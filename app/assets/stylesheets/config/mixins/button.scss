@@ -1,0 +1,57 @@
+@import 'config/variables';
+
+@mixin button_style--default {
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+@mixin create_button_style ($bg_color, $bg_color_hover,
+    $color, $color_hover) {
+
+    background-color: $bg_color;
+    color: $color;
+
+    &:hover {
+        background-color: $bg_color_hover;
+        color: $color_hover;
+    }
+}
+
+@mixin get_button_style($style) {
+    @if $style==danger {
+        @include create_button_style($COLOR--DANGER,
+            $COLOR--DANGER--HOVER,
+            $COLOR--ULTRA--LIGHT,
+            $COLOR--ULTRA--LIGHT);
+    }
+
+    @else if $style==warning {
+        @include create_button_style($COLOR--WARNING,
+            $COLOR--WARNING,
+            $COLOR--ULTRA--LIGHT,
+            $COLOR--ULTRA--LIGHT);
+    }
+
+    @else if $style==float {
+        @include create_button_style($COLOR--20,
+            $COLOR--10,
+            $COLOR--ULTRA--LIGHT,
+            $COLOR--ULTRA--LIGHT);        
+    }
+}
+
+@mixin button_style {
+    $styles: danger, warning, float;
+
+    @each $style in $styles {
+        &.BUTTON--STYLE--#{$style} {
+            @include get_button_style($style);
+        }
+    }
+}

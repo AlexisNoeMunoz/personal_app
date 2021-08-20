@@ -14,4 +14,4 @@ const useGridPropTypes = () => ({
     maxWidth: string,
 })
 
-export default useGridPropTypes
+export {useGridPropTypes}

@@ -1,7 +1,7 @@
 
-import { useAppContainer } from 'hooks'
+import { useRootContainer } from 'hooks'
 
-const useScrollInSections = ({ up = false, elements = [], scroll = useAppContainer() }) => {
+const useScrollInSections = ({ up = false, elements = [], scroll = useRootContainer() }) => {
     let newPos = 0
 
     for (let i in elements) {
@@ -19,4 +19,4 @@ const useScrollInSections = ({ up = false, elements = [], scroll = useAppContain
     if (up) scroll.scrollTop = newPos
 }
 
-export default useScrollInSections
+export {useScrollInSections}

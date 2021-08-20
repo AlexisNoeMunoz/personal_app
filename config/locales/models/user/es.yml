@@ -1,0 +1,25 @@
+
+es:  
+  activerecord:
+    errors:
+      models: 
+        user:
+          attributes:
+              name:
+                  blank: 'El usuario es obligatorio'
+                  taken: 'El usuario ya está en uso'
+                  too_long: 'El usuario debe ser menor de %{count} caracteres'
+              email:
+                  blank: 'El correo es obligatorio'
+                  invalid: 'El correo no tiene el formato correcto'
+                  taken: 'Ese correo ya esta registrado'
+                  too_long: 'El correo debe ser menor de %{count} caracteres'
+              password_hash:
+                  blank: 'La contraseña es obligatoria'
+                  too_long: 'La contraseña debe ser menor de %{count} caracteres'
+              color:
+                  blank: 'El color es obligatorio'
+                  wrong_length: 'El tamaño del color debe ser de %{count} caracteres'   
+          login_error: 'El correo o la contraseña son incorrectos'
+              
+              

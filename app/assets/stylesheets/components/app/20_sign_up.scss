@@ -1,0 +1,19 @@
+@import 'config/variables';
+
+.app__sign_up {
+    padding: 3em;
+
+    &__form {                    
+        & > .app__SHUT_DOWN {
+            @media screen and (max-width: $SMW) {
+                display: none;
+            }
+        }
+    }
+
+    & > .app__SHUT_DOWN {
+        @media screen and (min-width: $SMW) {
+            display: none;
+        }
+    }
+}

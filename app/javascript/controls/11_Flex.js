@@ -49,4 +49,5 @@ Flex.propTypes = {
     gap: string,
 }
 
-export default Flex
+Flex.displayName = 'Flex'
+export {Flex}

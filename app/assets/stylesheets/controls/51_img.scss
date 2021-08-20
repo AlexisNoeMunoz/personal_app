@@ -1,13 +1,18 @@
 @import 'config/variables';
 
 .IMG {
-    width: 100%;
-    
+    width: 100%;    
+    color: $COLOR--DARK;
+    text-align: center;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     &.IMG--RADIUS {
         border-radius: 5px;
     }
     &.IMG--SHADOW {
-        box-shadow: 0px 0px 10px $COLOR--DARK;
+        box-shadow: $SHADOW--DARK;
         margin: 1px;
     }
 }

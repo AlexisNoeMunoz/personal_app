@@ -1,0 +1,6 @@
+
+one:
+  name: 'Test'
+  email: 'Test@Test.com'
+  password_hash: 'Test'
+  color: '123456'

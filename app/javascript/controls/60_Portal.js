@@ -1,12 +1,7 @@
 
 import {createPortal} from 'react-dom'
 
-const Portal = ({
-    children, 
-    container = document.body,
-    }) => {
+const Portal = ({children, container = document.body,}) => 
+        createPortal(children, container)       
 
-    return createPortal(children, container)    
-}
-
-export default Portal
+export {Portal}

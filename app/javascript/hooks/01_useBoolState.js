@@ -7,4 +7,4 @@ const useBoolState = (initialValue) => {
     return [state, toggleState]
 }
 
-export default useBoolState
+export {useBoolState}

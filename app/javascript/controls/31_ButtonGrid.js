@@ -1,29 +1,27 @@
 
-import { useGridStyle, useGridPropTypes } from 'controls/hooks'
+import { string } from 'prop-types'
+import { useGridStyle, useGridPropTypes, useButtonPropTypes, useButtonHandler } from 'controls/hooks'
 
 const ButtonGrid = ({
     children,
     className = '',
-    type = '',
     ...preProps }) => {
 
-    className += ' BUTTON_GRID'
-    if(type !== '') className += ` BUTTON--STYLE--${type}`
+    const { props: preProps1, style } = useGridStyle(preProps)
+    const { Element, styleClassName, props } = useButtonHandler(preProps1)
 
-    const {props, style} = useGridStyle(preProps)
-
+    className += ' BUTTON_GRID' + styleClassName
     return (
-        <button {...props} {...{ className, style}} >
+        <Element {...props} {...{ className, style }} >
             {children}
-        </button>
+        </Element>
     )
 }
 
-import { string } from 'prop-types'
 ButtonGrid.propTypes = {
     className: string,
-    type: string, 
+    ...useButtonPropTypes(),
     ...useGridPropTypes(),
 }
 
-export default ButtonGrid
+export { ButtonGrid }

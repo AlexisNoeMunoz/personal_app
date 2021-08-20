@@ -1,0 +1,15 @@
+@import 'config/variables';
+
+.app__home {
+
+    &__header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+
+        padding: 0.3em 1em;
+        background-color: rgba(white, 0.8);  
+        box-shadow: $SHADOW--DARK;      
+        backdrop-filter: blur(4px);
+    }
+}

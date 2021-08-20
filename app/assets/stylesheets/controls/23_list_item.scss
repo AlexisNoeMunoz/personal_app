@@ -1,0 +1,9 @@
+@import 'config/mixins/text';
+
+.LIST_ITEM{
+    @include text_style--default;
+
+    &.LIST_ITEM--LIGHT{
+        @include text_style--light;
+    }    
+}

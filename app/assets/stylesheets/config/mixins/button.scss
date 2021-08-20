@@ -5,6 +5,12 @@
     outline: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    font-size: 1.4em;
+    text-decoration: none;
+
+    @media screen and (min-width: $MDW) {
+        font-size: 1.2em;
+    }
 
     &:focus {
         outline: 0;
@@ -42,12 +48,19 @@
         @include create_button_style($COLOR--20,
             $COLOR--10,
             $COLOR--ULTRA--LIGHT,
-            $COLOR--ULTRA--LIGHT);        
+            $COLOR--ULTRA--LIGHT);
+    }
+
+    @else if $style==success {
+        @include create_button_style($COLOR--SUCCESS,
+            $COLOR--SUCCESS--HOVER,
+            $COLOR--ULTRA--LIGHT,
+            $COLOR--ULTRA--LIGHT)
     }
 }
 
 @mixin button_style {
-    $styles: danger, warning, float;
+    $styles: danger, warning, float, success;
 
     @each $style in $styles {
         &.BUTTON--STYLE--#{$style} {

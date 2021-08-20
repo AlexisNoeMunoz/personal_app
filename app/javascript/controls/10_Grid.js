@@ -1,4 +1,5 @@
 
+import { string } from 'prop-types'
 import { forwardRef } from 'react'
 import { useGridStyle, useGridPropTypes } from 'controls/hooks'
 
@@ -18,10 +19,10 @@ const Grid = forwardRef(({
     )
 })
 
-import { string } from 'prop-types'
 Grid.propTypes = {
     className: string,    
     ...useGridPropTypes()
 }
 
-export default Grid
+Grid.displayName = 'Grid'
+export {Grid} 

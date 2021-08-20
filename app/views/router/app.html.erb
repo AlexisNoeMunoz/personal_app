@@ -1,0 +1,8 @@
+
+<% router = @USER_SESSION ? "App/RouterWithSession" : "App/RouterWithoutSession" %>
+
+<%= react_component(
+    router, 
+    {}, 
+    {id: 'root'}
+) %>

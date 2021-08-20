@@ -1,0 +1,8 @@
+@import 'config/variables';
+
+.CARD {
+    border-radius: 10px;
+    box-shadow: $SHADOW--DARK;
+    padding: 1em;
+    background-color: $COLOR--ULTRA--LIGHT;
+}

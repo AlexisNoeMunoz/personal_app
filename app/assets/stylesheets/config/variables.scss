@@ -20,19 +20,28 @@
 
 // COMMON COLORS
     $COLOR--DARK: #3e4453;
-    $COLOR--NEUTRAL: #8895B8;
+    $COLOR--NEUTRAL: #999999;
     $COLOR--LIGHT: #c2c2c2;
     $COLOR--ULTRA--LIGHT: #e2e2e2;
 
     $COLOR--DANGER: #b00000;
     $COLOR--DANGER--HOVER: #e60000;
     $COLOR--WARNING: #d1d700;
+    $COLOR--SUCCESS: #0bae4d;
+    $COLOR--SUCCESS--HOVER: #0ecf5b;
     
 // PALLETE
     $COLOR--10: #2F406B;
     $COLOR--20: #1f2947;
     $COLOR--30: #698EEE;
     $COLOR--40: #AFC0EB;
+    $COLOR--50: #eee802;
+    $COLOR--60: #ed21fe;
 
 // FILTER COMMON COLORS
     $FILTER--ULTRA--LIGHT: invert(99%) sepia(0%) saturate(5289%) hue-rotate(189deg) brightness(112%) contrast(77%);
+    $FILTER--ULTRA--DARK: invert(23%) sepia(4%) saturate(2516%) hue-rotate(185deg) brightness(99%) contrast(87%);
+
+//SHADOWS
+    $SHADOW--SIZE: 0 0 5px;
+    $SHADOW--DARK: $SHADOW--SIZE rgba($COLOR--DARK, 0.3);

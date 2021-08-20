@@ -24,4 +24,4 @@ const useGridStyle = ({
     return { props, style }
 }
 
-export default useGridStyle
+export {useGridStyle}

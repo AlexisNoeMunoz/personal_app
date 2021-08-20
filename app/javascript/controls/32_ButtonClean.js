@@ -1,33 +1,30 @@
 
+import { string } from "prop-types"
+import { useButtonPropTypes, useButtonHandler, useWidthPropTypes, useWidthStyle } from 'controls/hooks'
+
 const ButtonClean = ({
     children,
-    style = {},
-    className = '',
-    type = '',
-    w100 = false,
-    pad = '',
-    ...props}) => {
+    className = '',        
+    pad = '',    
+    ...preProps }) => {    
 
-
-    className += ' BUTTON_CLEAN'
-    if(type !== '') className += ` BUTTON--STYLE--${type}`
-
-    if(w100) style['width'] = '100%'
+    const {style, props: preProps1} = useWidthStyle(preProps)
+    const {Element, styleClassName, props} = useButtonHandler(preProps1)
+    
+    className += ' BUTTON_CLEAN' + styleClassName
     style['padding'] = pad
+
     return (
-        <button {...props} {...{className, style}}>
+        <Element {...props} {...{ className, style }}>
             {children}
-        </button>
+        </Element>
     )
 }
 
-import { bool, object, string } from "prop-types"
-ButtonClean.propTypes = {
-    style: object,
+ButtonClean.propTypes = {    
     className: string,
-    type: string,
-    w100: bool,
     pad: string,
+    ...useButtonPropTypes(),
+    ...useWidthPropTypes(),     
 }
-
-export default ButtonClean
+export { ButtonClean }

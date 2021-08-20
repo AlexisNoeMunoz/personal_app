@@ -31,4 +31,4 @@ Title.propTypes = {
     w100: bool,    
 }
 
-export default Title
+export {Title}

@@ -9,7 +9,9 @@
     background-size: contain;
     background-position: center;
 
-    $icons: close, arrow;
+    filter: $FILTER--ULTRA--DARK;
+
+    $icons: close, arrow, shut_down, see;
 
     @each $icon in $icons {
         &.ICON--#{$icon} {

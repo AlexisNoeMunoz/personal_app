@@ -1,24 +1,25 @@
 
 import { bool, object, string } from "prop-types"
+import { forwardRef } from "react"
 
-const Scroll = ({
+const Scroll = forwardRef(({
     children,
     style = {},
     className = '',
     w100 = false,
     pad = '',
-    ...props }) => {
+    ...props }, ref) => {
 
     className += ' SCROLL'
 
     if(w100) style['width'] = '100%'
     style['padding'] = pad
     return (
-        <div {...props} {...{ className, style }}>
+        <div tabIndex={0} {...props} {...{ className, style, ref }}>
             {children}
         </div>
     )
-}
+})
 
 Scroll.propTypes = {
     style: object,
@@ -27,4 +28,5 @@ Scroll.propTypes = {
     pad: string,
 }
 
-export default Scroll
+Scroll.displayName = 'Scroll'
+export {Scroll}

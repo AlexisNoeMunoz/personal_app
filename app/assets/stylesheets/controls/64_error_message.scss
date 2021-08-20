@@ -1,0 +1,31 @@
+@import 'config/variables';
+@import 'config/zindex';
+
+.ERROR_MESSAGE {
+    padding: 1em;
+    padding-right: 2em;
+    z-index: $zi-controls--message;
+    position: fixed;
+    top: 0;
+    left: 0;    
+
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba($COLOR--ULTRA--LIGHT, 0.5), rgba($COLOR--NEUTRAL, 0.5));
+    backdrop-filter: blur(2px);    
+
+    &__MODAL {
+        background-color: $COLOR--ULTRA--LIGHT;
+        border: 2px solid $COLOR--DANGER;
+        box-shadow: $SHADOW--DARK;
+        border-radius: 10px;
+        padding: 1em;
+
+        width: 100%;
+        max-width: 30em;
+
+        .BUTTON {
+            margin-top: 1em;
+        }
+    }
+}

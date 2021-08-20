@@ -1,4 +1,5 @@
 
+
 const Icon = ({
     icon = '',    
     className = '',
@@ -26,4 +27,4 @@ Icon.propTypes = {
     style: object,
 }
 
-export default Icon
+export {Icon}

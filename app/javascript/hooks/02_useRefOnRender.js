@@ -11,4 +11,4 @@ const useRefOnRender = (refs = []) => {
     return elements
 }
 
-export default useRefOnRender
+export {useRefOnRender}

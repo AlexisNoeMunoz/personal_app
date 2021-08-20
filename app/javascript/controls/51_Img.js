@@ -6,7 +6,7 @@ const Img = ({
     style = {},
     radius = false,
     shadow = false,
-    maxWidth = '',
+    maxWidth = '',    
     ...props }) => {
 
     className += ' IMG'
@@ -15,7 +15,7 @@ const Img = ({
 
     style['maxWidth'] = maxWidth
     return (
-        <img {...props} {...{ src, className, style }} />
+        <img loading='lazy' {...props} {...{ src, className, style }} />
     )
 }
 
@@ -28,4 +28,4 @@ Img.propTypes = {
     maxWidth: string,
 }
 
-export default Img
+export {Img}

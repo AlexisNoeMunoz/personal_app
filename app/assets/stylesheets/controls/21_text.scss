@@ -1,17 +1,13 @@
-@import 'config/variables';
+@import 'config/mixins/text';
 
 .TEXT{
-    color: $COLOR--DARK;
-    font-size: 1.2em;
-    
-    @media screen and (min-width: $LGW) {
-        font-size: 1.5em;            
-    }
-    @media screen and (min-width: $XLGW) {
-        font-size: 2em;            
-    }
+    @include text_style--default;
 
     &.TEXT--LIGHT{
-        color: $COLOR--ULTRA--LIGHT;
-    }
+        @include text_style--light;
+    }   
+    
+    &.TEXT--NEUTRAL{
+        @include text_style--neutral;
+    }  
 }

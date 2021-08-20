@@ -1,0 +1,48 @@
+@import 'config/variables';
+
+.app__SHUT_DOWN {
+    gap: 0.3em;    
+    padding: 0.3em;
+    border-radius: 5px;
+
+    &--floating {
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+    }
+
+    .TEXT {
+        font-weight: bold;       
+        font-size: 1.2em; 
+    }
+
+    .ICON {
+        width: 1.5em;
+        height: 1.5em;
+    }        
+
+    @media screen and (min-width: $MDW) {      
+        padding: 0.3em 1em;
+        
+        &:hover {
+            background-color: $COLOR--DANGER--HOVER;
+            
+            .TEXT {
+                color: $COLOR--ULTRA--LIGHT;            
+            }
+            .ICON {
+                filter: $FILTER--ULTRA--LIGHT
+            }
+        }
+
+        .TEXT {
+            font-size: 1em;
+        }
+
+        .ICON {
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+}

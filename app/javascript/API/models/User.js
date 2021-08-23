@@ -22,5 +22,11 @@ const User = {
             data: { name, email, password }
         })        
     },
+    get: () => {
+        return request({
+            url: 'user/get',
+            method: 'GET',            
+        })
+    }
 }
 export { User }

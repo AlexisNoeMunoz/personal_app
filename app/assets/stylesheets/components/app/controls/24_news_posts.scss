@@ -1,0 +1,21 @@
+@import 'config/variables';
+
+.app__NEWS_POSTS.BUTTON_CLEAN {
+    position: fixed;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    background-color: $COLOR--ULTRA--LIGHT;
+    box-shadow: $SHADOW--SIZE 3px rgba($COLOR--DARK, 0.3);
+
+    &:hover {
+        background-color: white;
+    }
+
+    .TEXT {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}

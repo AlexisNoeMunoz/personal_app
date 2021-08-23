@@ -8,10 +8,10 @@ const requestAPI = async ({ url, ...props }) => {
             ...props,
             url: '/api/' + url,
         })
-    } catch ({ errors, xhr }) {
+    } catch ({ response, xhr }) {
         if (xhr.status == 400) {
-            showErrorMessage(errors)
-        } else throw `API Error: ${response}`
+            showErrorMessage(response.errors)
+        } else console.error(`API Error`)        
     }
 }
 

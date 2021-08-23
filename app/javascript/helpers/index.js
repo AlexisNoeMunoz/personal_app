@@ -1,2 +1,3 @@
 
-export * from './ArrayMethods'
+export * from './ObjectHelper'
+export * from './ColorHelper'

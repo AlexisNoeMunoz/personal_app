@@ -1,0 +1,16 @@
+
+es:  
+  activerecord:
+    errors:
+      models: 
+        pinned_post:
+          attributes:
+              comment:                  
+                  too_long: 'El límite de caracteres es de %{count}'
+              user:
+                  required: 'No fue posible detectar al usuario'       
+                  taken: 'Ya fijaste esta publicación en tu perfil'
+              post:
+                  required: 'No fue posible encontrar la publicación'       
+              
+              

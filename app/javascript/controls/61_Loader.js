@@ -20,6 +20,7 @@ const createLoader = ($element, window = false) => {
             <Loader show />
         </Portal>
     )
+    if(!$element) window = true
     render(window ? <WindowLoader /> : <NewLoader />, $container)
 
     return () => {

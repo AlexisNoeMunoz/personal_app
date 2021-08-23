@@ -1,40 +1,39 @@
 
-import { Grid, Button, Link, Loader } from 'controls'
-import { Logo, ShutDown, FormContainer } from 'components/App/controls'
+import { Grid, Button, Link } from 'controls'
+import { Logo, FormContainer } from 'components/App/controls'
 import { EmailField, PasswordField } from './Fields'
-import { Legend } from './Legend'
 
 import { useForm } from 'hooks'
 
 import getActions from './Actions'
-import { fillObjectFromArray } from 'helpers'
+import { ObjectHelper } from 'helpers'
 import { useRef } from 'react'
 
 const Form = () => {
     const fields = ['email', 'password']
-    const form = useForm(fillObjectFromArray(fields))    
+    const form = useForm(ObjectHelper.fillFromArray(fields))    
 
-    const $formContainer = useRef()    
-    const { handleLogin } = getActions({ form, fields, $loaderContainer: $formContainer})
+    const $loaderContainer = useRef()    
+    const { loginHandler } = getActions({ form, $loaderContainer})
 
     const buttonsStyle = { margin: '1em 0' }
     return (
-        <FormContainer className='app__login__form' ref={$formContainer}>
+        <FormContainer className='app__login__form' ref={$loaderContainer} onSubmit={loginHandler}>
             <Logo />
+            
             <Grid gap='1.5em' w100 maxWidth='23em'>
                 <EmailField state={form.email} ref={form.$email} />
                 <PasswordField state={form.password} ref={form.$password} />
             </Grid>
             <Grid gap='1em' w100 style={buttonsStyle}>
-                <Button type='success' w100 maxWidth='10em' onClick={handleLogin}>
+                <Button submit type='success' w100 maxWidth='10em'>
                     Iniciar Sesión
                 </Button>
                 <Link href='/app/registro' router>
                     Registrarse
                 </Link>
             </Grid>
-            <ShutDown floating />
-            <Legend />            
+
         </FormContainer>
     )
 }

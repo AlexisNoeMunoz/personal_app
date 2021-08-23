@@ -1,14 +1,12 @@
 
-import { ShutDown, AbstractGrid } from 'components/App/controls'
-import { Legend } from './Legend'
+import { AbstractGrid, AboutMeLink } from 'components/App/controls'
 import { Form } from './Form'
 
 const Login = () => {
     return (
         <AbstractGrid className='app__login'>        
             <Form />
-            <ShutDown floating/>
-            <Legend />
+            <AboutMeLink />
         </AbstractGrid>
     )
 }

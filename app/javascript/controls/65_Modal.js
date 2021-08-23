@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Scroll, Grid, ButtonClean, Icon, Portal} from 'controls'
 
 const Modal = ({
@@ -8,23 +8,16 @@ const Modal = ({
     show = false,
     setShow = () => {},
     ...props}) => {
-    
-    const [visible, setVisible] = useState(show)            
+        
     const $scroll = useRef()     
-
+   
     useEffect(() => {
-        if(show) setVisible(true)        
-        else setTimeout(() => setVisible(false) , 200)
-    }, [show]) 
+        if(show) $scroll.current.focus()
+    }, [show])
 
-    useEffect(() => {
-        if(visible) $scroll.current.focus()
-    }, [visible])
+    className += " MODAL"       
 
-    className += " MODAL"   
-    if(!show) className += ' MODAL--HIDE'    
-
-    if(!visible) return null
+    if(!show) return null
     return (
         <Portal>
             <Grid {...{className}} >

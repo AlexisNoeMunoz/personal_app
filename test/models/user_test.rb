@@ -1,9 +1,8 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase            
-    include ModelValidator 
-
-    setup do
+    include ModelValidator
+    setup do        
         @data = User.new
         @data.name = 'Test100'
         @data.email = 'Test100@Test100.com'
@@ -12,7 +11,7 @@ class UserTest < ActiveSupport::TestCase
         start_validation(self.class.name)
     end
 
-    test "Name" do                
+    test "Name" do                        
         validate_string :name, 'Nombre', {
             allow_duplicated: false,       
         }, {max_length: 25}                    

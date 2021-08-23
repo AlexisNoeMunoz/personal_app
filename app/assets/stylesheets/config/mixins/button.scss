@@ -17,12 +17,9 @@
     }
 }
 
-@mixin create_button_style ($bg_color, $bg_color_hover,
-    $color, $color_hover) {
-
+@mixin create_button_style ($bg_color, $bg_color_hover, $color, $color_hover) {
     background-color: $bg_color;
     color: $color;
-
     &:hover {
         background-color: $bg_color_hover;
         color: $color_hover;
@@ -57,10 +54,19 @@
             $COLOR--ULTRA--LIGHT,
             $COLOR--ULTRA--LIGHT)
     }
+
+    @else if $style==transparency {        
+        backdrop-filter: blur(8px);
+        background: radial-gradient(transparent 50%, rgba($COLOR--DARK, 0.1) 100%);
+        color: $COLOR--DARK;                
+        &:hover {
+            background: radial-gradient(rgba($COLOR--DARK, 0.1) 50%, rgba($COLOR--DARK, 0.2) 100%);            
+        }
+    }
 }
 
 @mixin button_style {
-    $styles: danger, warning, float, success;
+    $styles: danger, warning, float, success, transparency;
 
     @each $style in $styles {
         &.BUTTON--STYLE--#{$style} {

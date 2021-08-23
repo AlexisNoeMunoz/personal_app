@@ -1,5 +1,5 @@
 
-<% router = @USER_SESSION ? "App/RouterWithSession" : "App/RouterWithoutSession" %>
+<% router = @SESSION_VERIFIED ? "App/RouterWithSession" : "App/RouterWithoutSession" %>
 
 <%= react_component(
     router, 

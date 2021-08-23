@@ -1,9 +1,16 @@
 
+import { string } from "prop-types"
 
-const LoaderIcon = ({ size }) => {
+const LoaderIcon = ({ size, className = '', type = ''}) => {
+    className += ' LOADER_ICON'
+    if(type !== '')  className += ` LOADER_ICON--${type}`
     return (
-        <div className="LOADER_ICON" style={{ '--size': size }} />
+        <div className={className} style={{ '--size': size }} />
     )
 }
 
+LoaderIcon.propTypes = {
+    className: string,
+    type: string,
+}
 export { LoaderIcon }

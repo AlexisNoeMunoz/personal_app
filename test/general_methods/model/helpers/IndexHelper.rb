@@ -1,7 +1,7 @@
 
 module IndexHelper
-    def validate_index_double_unique(fields=[], names=[], values=[], cross_values=[], second_cross_valid=true)
-        field_names = "#{names[0]}, #{names[1]}",
+    def validate_index_double_unique(fields=[], names=[], values=[], cross_values=[], second_cross_valid=true)    
+        field_names = "#{names[0]}, #{names[1]}"        
         @data[fields[0]] = values[0]
         @data[fields[1]] = values[1]
         validate(

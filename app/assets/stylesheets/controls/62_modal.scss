@@ -24,9 +24,7 @@
 
     &__CONTAINER {
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr;
-        animation-name: animation__modal;
-        animation-duration: 0.1s;
+        grid-template-columns: 1fr;        
 
         background-color: $COLOR--ULTRA--LIGHT;
         border-radius: 10px 10px; 
@@ -36,12 +34,7 @@
         @media screen and (min-width: $LGW) {
             max-width: 70em;
         }
-    }
-
-    &.MODAL--HIDE &__CONTAINER {
-        animation-name: animation__modal__reverse;        
-        transform: scale(0, 0);
-    }    
+    }  
 
     &__SCROLL {                       
         padding: 1.5em;     
@@ -73,23 +66,5 @@
         &__ICON {
             filter: $FILTER--ULTRA--LIGHT;
         }
-    }
-}
-
-@keyframes animation__modal {
-    0% {
-        transform: scale(0, 0);
-    }
-    100% {
-        transform: scale(100%, 100%);
-    }
-}
-
-@keyframes animation__modal__reverse {
-    0% {
-        transform: scale(100%, 100%);
-    }
-    100% {
-        transform: scale(0, 0);
     }
 }

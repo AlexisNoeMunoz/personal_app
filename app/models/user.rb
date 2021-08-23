@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+    has_many :posts
+    has_many :pinned_posts
+    has_many :liked_posts
+    has_many :disliked_posts
+
     validates :name, :email, :password_hash, :color, presence: true
     validates :name, length: {maximum: 25}, uniqueness: {case_sensitive: false}
     validates :color, length: {is: 6}

@@ -21,7 +21,7 @@ module Validator
             @data.errors.messages.values.flatten.uniq.each do |error|
                 Print.error(error, @color)
             end
-        end        
+        end               
         puts ""
         message = "#{message} (#{field_name})"
         validating ? assert(@data.save, message) : assert_not(@data.save, message)

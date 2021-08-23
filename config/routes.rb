@@ -9,8 +9,23 @@ Rails.application.routes.draw do
     end    
 
     namespace :api do
-        post 'user/create'
-        post 'user/login'
-        delete 'user/logout'
+        namespace :user do            
+            post 'login'
+            delete 'logout' 
+            post 'create'
+            get 'get'
+        end        
+
+        namespace :post do
+            post 'create'
+            get 'get'            
+        end
+
+        namespace :post, module: 'post_reaction' do
+            post 'like'
+            delete 'like', action: 'remove_like'
+            post 'dislike'            
+            delete 'dislike', action: 'remove_dislike'
+        end
     end
 end

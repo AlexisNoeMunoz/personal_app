@@ -10,7 +10,7 @@ const AchievementButton = ({
     alt = '',
 }) => {
 
-    const [show, setShow] = useBoolState(false)
+    const [show, setShow] = useBoolState(false)    
 
     const IMG_CLASS = `
         home__achievements__BUTTON

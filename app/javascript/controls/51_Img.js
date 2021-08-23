@@ -15,7 +15,7 @@ const Img = ({
 
     style['maxWidth'] = maxWidth
     return (
-        <img loading='lazy' {...props} {...{ src, className, style }} />
+        <img {...props} {...{ src, className, style }} />
     )
 }
 

@@ -15,7 +15,7 @@ const request = ({ method = 'GET', ...props }) => {
             ...props,        
             type: method,
             success: (response) => resolve(response),
-            error: ({errors}, status, xhr) => reject({errors, xhr})
+            error: (response, status, xhr) => reject({response, xhr})
         })                
     })
 }

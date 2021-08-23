@@ -1,0 +1,14 @@
+
+es:  
+  activerecord:
+    errors:
+      models: 
+        liked_post:
+          attributes:            
+              user:
+                  required: 'No fue posible detectar al usuario'       
+                  taken: 'Esta publicación ya tiene tu like'
+              post:
+                  required: 'No fue posible encontrar la publicación'       
+              
+              

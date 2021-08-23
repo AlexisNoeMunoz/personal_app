@@ -2,8 +2,14 @@
 import { array, func } from "prop-types"
 import { Flex, Title, List, ListItem, Button, Portal } from "controls"
 import { render, unmountComponentAtNode } from 'react-dom'
+import { useEffect, useRef } from "react"
 
 const ErrorMessage = ({ errors = [], hide = () => { } }) => {
+    const $button = useRef()
+    useEffect(() => {        
+        $button.current.focus()
+    }, [])
+
     return (
         <Portal>
             <Flex className='ERROR_MESSAGE' alignX='center' alignY='center'>
@@ -14,7 +20,7 @@ const ErrorMessage = ({ errors = [], hide = () => { } }) => {
                             <ListItem key={key}>{error}</ListItem>
                         )}
                     </List>
-                    <Button type='danger' onClick={hide} maxWidth='10em'>
+                    <Button type='danger' onClick={hide} maxWidth='10em' ref={$button}>
                         Entendido
                     </Button>
                 </Flex>

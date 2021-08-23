@@ -24,7 +24,7 @@ module ActiveRecordTableDefinitionExtension
         column name, :decimal, **options
     end
     
-    def dreferences(name, on_delete, options = {})
+    def dreference(name, on_delete, options = {})
        references name, :foreign_key => {on_update: :cascade, on_delete: on_delete} , **options
     end
     

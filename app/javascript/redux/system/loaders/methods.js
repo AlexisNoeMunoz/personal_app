@@ -1,0 +1,6 @@
+
+
+export default {
+    SET_USERS: 'SYSTEM__LOADERS__SET_USERS',
+    SET_POSTS: 'SYSTEM__LOADERS__SET_POSTS',
+}

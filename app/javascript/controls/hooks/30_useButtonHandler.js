@@ -1,11 +1,19 @@
 
-const RenderButton = ({children, ...props}) => <button {...props}>{children}</button>
-const RenderLink = ({children, ...props}) => <a {...props}>{children}</a>
+import { forwardRef } from 'react'
 
-const useButtonHandler = ({anchor = false, type = '', ...props}) => {    
-    const Element = anchor ? RenderLink : RenderButton
+const renderButton = forwardRef(({ children, ...props }, ref) =>
+    <button {...props} ref={ref}>{children}</button>)
+
+const renderLink = forwardRef(({ children, ...props }, ref) =>
+    <a {...props} ref={ref}>{children}</a>)
+
+const useButtonHandler = ({ anchor = false, type = '', submit = false, ...props }) => {
+    const Element = anchor ? renderLink : renderButton
     const styleClassName = type === '' ? '' : ` BUTTON--STYLE--${type}`
-    return {Element, styleClassName, props}
+    if (submit) props.type = 'submit'
+    return { Element, styleClassName, props }
 }
 
+renderButton.displayName = 'renderButton'
+renderLink.displayName = 'rednerLink'
 export { useButtonHandler }

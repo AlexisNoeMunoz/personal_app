@@ -1,12 +1,12 @@
 
 import { Route, Redirect, BrowserRouter, Switch } from "react-router-dom"
 import { Home } from "components/App/components"
-// import { APIProvider } from 'API'
+import { ReduxProvider } from 'components/App/controls'
 
 const Router = () => {
     const path = '/app'
     return (
-        
+        <ReduxProvider>
             <BrowserRouter>
                 <Switch>
                     <Route path={`${path}/inicio`} exact>
@@ -17,7 +17,7 @@ const Router = () => {
                     </Route>
                 </Switch>
             </BrowserRouter>
-        
+        </ReduxProvider>
     )
 }
 

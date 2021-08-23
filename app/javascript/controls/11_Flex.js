@@ -12,6 +12,7 @@ const Flex = forwardRef(({
     maxWidth = '',
     wrap = false,
     gap = '',
+    pad = '',
     ...props }, ref) => {
 
     className += ' FLEX'
@@ -21,6 +22,7 @@ const Flex = forwardRef(({
     style['flexDirection'] = direction    
     if(wrap) style['flexWrap'] = 'wrap'
     style['gap'] = gap
+    style['padding'] = pad
     
     if(direction == 'column'){
         style['justifyContent'] = alignY
@@ -47,6 +49,7 @@ Flex.propTypes = {
     maxWidth: string,
     wrap: bool,
     gap: string,
+    pad: string,
 }
 
 Flex.displayName = 'Flex'

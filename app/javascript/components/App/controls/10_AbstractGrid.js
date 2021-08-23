@@ -6,7 +6,7 @@ const AbstractGrid = ({children, className='', ...props}) => {
     
     return (
         <Grid alignContentY='center' className='app__ABSTRACT' >            
-            <Grid alignContentY='center' {...props} className={className}>
+            <Grid alignContentY='center' gap='3em' {...props} className={className}>
                 {children}
             </Grid>
         </Grid>

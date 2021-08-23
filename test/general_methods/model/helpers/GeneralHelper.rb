@@ -13,7 +13,7 @@ module GeneralHelper
         )
     end
     def validate_duplicated(field, name, value, allow_duplicated)
-        @data[field] = value
+        @data[field] = value        
         validate(
             allow_duplicated ? 
                 "No se esta respetando que puede haber campos duplicados" :

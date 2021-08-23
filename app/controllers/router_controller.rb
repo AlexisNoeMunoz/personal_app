@@ -4,6 +4,6 @@ class RouterController < ApplicationController
     end    
 
     def app    
-        @USER_SESSION = session[Api::UserController.get_session_name()]                        
+        @SESSION_VERIFIED = session[ApiController.get_session_name] != nil
     end
 end

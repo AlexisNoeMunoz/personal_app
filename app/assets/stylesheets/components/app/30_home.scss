@@ -1,15 +1,22 @@
 @import 'config/variables';
 
-.app__home {
-
+.app__home {    
     &__header {
         position: sticky;
         top: 0;
-        width: 100%;
+        width: 100%;        
 
         padding: 0.3em 1em;
         background-color: rgba(white, 0.8);  
         box-shadow: $SHADOW--DARK;      
         backdrop-filter: blur(4px);
+        
+        &__logo {
+            margin: 0 2em;
+        }
+
+        &__logout.BUTTON {
+            padding: 0.5em;
+        }
     }
 }

@@ -3,6 +3,7 @@ export * from './10_Grid'
 export * from './11_Flex'
 export * from './12_Scroll'
 export * from './13_Card'
+export * from './14_Form'
 
 export * from './20_Title'
 export * from './21_Text'
@@ -15,9 +16,11 @@ export * from './31_ButtonGrid'
 export * from './32_ButtonClean'
 
 export * from './40_TextField'
+export * from './41_TextArea'
 
 export * from './50_Icon'
 export * from './51_Img'
+export * from './52_Divisor'
 
 export * from './60_Portal'
 export * from './61_Loader'

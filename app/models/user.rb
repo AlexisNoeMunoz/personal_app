@@ -13,6 +13,16 @@ class User < ApplicationRecord
 
     include BCrypt
 
+    class << self 
+        def generate_color
+            char = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+            colorArray = (1..6).map do
+                char[rand(16)]
+            end        
+            return colorArray.join()
+        end
+    end
+    
     def password
         @password ||= Password.new(password_hash)
     end
@@ -21,12 +31,12 @@ class User < ApplicationRecord
         @password = Password.create(new_password)
         self.password_hash = @password
     end
-    
-    def self.generate_color
-        char = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
-        colorArray = (1..6).map do
-            char[rand(16)]
-        end        
-        return colorArray.join()
-    end
+
+    def select_from_new
+        return {
+            id: self.id,
+            name: self.name,
+            color: self.color
+        }
+    end        
 end

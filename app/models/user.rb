@@ -8,7 +8,7 @@ class User < ApplicationRecord
     validates :name, length: {maximum: 25}, uniqueness: {case_sensitive: false}
     validates :color, length: {is: 6}
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: {case_sensitive: false}
-    validates :email, length: {maximum: 30}    
+    validates :email, length: {maximum: 50}    
     validates :password_hash, length: {maximum: 255}
 
     include BCrypt

@@ -5,4 +5,5 @@
 // channels.keys().forEach(channels)
 
 export * from './post_channel'
+export * from './user_channel'
 

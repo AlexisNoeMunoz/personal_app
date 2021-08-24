@@ -6,7 +6,7 @@ import store from 'redux/store'
 import UserActions from 'redux/user/actions'
 import PostActions from 'redux/post/actions'
 
-import { createPostChannel } from 'channels'
+import { createPostChannel, createUserChannel } from 'channels'
 
 const ReduxActionsLoader = () => {
     const dispatch = useDispatch()
@@ -17,6 +17,7 @@ const ReduxActionsLoader = () => {
         dispatch(PostActions.GET())
 
         createPostChannel(dispatch)
+        createUserChannel(dispatch)
     }, [])
     return null
 }

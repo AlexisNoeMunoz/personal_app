@@ -15,4 +15,5 @@ export default {
         const response = await API.User.getCurrent()
         dispatch({ type: methods.GET_CURRENT_USER, payload: response })
     },
+    NEW: (response) => ({ type: methods.NEW, payload: response }),
 }

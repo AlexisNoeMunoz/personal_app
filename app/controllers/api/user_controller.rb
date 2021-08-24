@@ -28,7 +28,10 @@ class Api::UserController < ApiController
             user.color = User.generate_color
             get_model_transaction_errors(user)
             user.save!            
-            set_session(user.id)
+            set_session(user.id)            
+            ActionCable.server.broadcast 'user_channel', {
+                type: 'NEW_USER', payload: user.select_from_new()
+            }
             render js: 'window.location.reload()'
         end
         create_model_transaction(method)

@@ -20,7 +20,7 @@ class UserTest < ActiveSupport::TestCase
     test "Email" do
         validate_email :email, 'Correo', {
             allow_duplicated: false
-        }, {max_length: 30}
+        }, {max_length: 50}
     end
 
     test "Password" do

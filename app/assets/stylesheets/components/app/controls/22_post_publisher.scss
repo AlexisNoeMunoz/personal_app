@@ -17,10 +17,15 @@
     }
 
     .TEXT_FIELD {        
-        max-width: 40em;        
+        max-width: none;        
 
         &__INPUT {        
-            min-height: 10em;
+            min-height: 8em;
+            font-size: 1.2em;
+
+            @media screen and (min-width: $MDW) {
+                min-height: 6em;
+            }            
         }
     }
     .BUTTON {        

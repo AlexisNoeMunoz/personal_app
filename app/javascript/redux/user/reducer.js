@@ -1,13 +1,18 @@
 
 import methods from './methods'
 
-const data = {}
-
-const userReducer = (state = data, { payload, type }) => {
+const userReducer = (state = {}, { payload, type }) => {
     switch (type) {
-        case methods.GET: return payload
+        case methods.GET: return {...payload}
         default: return state
     }
 }
 
-export { userReducer }
+const currentUserReducer = (state = {}, { payload, type }) => {
+    switch (type) {
+        case methods.GET_CURRENT_USER: return {...payload}
+        default: return state
+    }
+}
+
+export { userReducer, currentUserReducer }

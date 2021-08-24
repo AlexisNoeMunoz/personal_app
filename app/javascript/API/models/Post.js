@@ -9,13 +9,13 @@ const Post = {
             data: { message }
         })
     },
-    get: () => {
+    get: ({ skip = 0, limit = 20 }) => {
         return request({
-            url: 'post/get',
-            method: 'GET',
+            url: 'post/get',            
+            data: { skip, limit },
         })
     },
-    like: ({ post_id, remove = false }) => {        
+    like: ({ post_id, remove = false }) => {
         return request({
             url: 'post/like',
             method: remove ? 'DELETE' : 'POST',

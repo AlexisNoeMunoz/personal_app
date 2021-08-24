@@ -4,6 +4,7 @@ export * from './11_Flex'
 export * from './12_Scroll'
 export * from './13_Card'
 export * from './14_Form'
+export * from './15_Tag'
 
 export * from './20_Title'
 export * from './21_Text'

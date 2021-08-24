@@ -6,7 +6,8 @@
     height: var(--size);
     border-width: 0.5em;
     border-style: solid;
-    border-color: $COLOR--DARK;
+    color: $COLOR--DARK;
+    border-color: currentColor;
     border-radius: 100%;
     border-right: none;
     border-bottom: none;
@@ -16,8 +17,14 @@
     animation-timing-function: linear;
     animation-duration: 0.6s;
 
+    &--loaded {
+        border: none;
+        background-color: currentColor;   
+        animation-name: none;
+    }
+
     &--neutral {
-        border-color: $COLOR--NEUTRAL;
+        color: $COLOR--NEUTRAL;
     }
 }
 

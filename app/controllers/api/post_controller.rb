@@ -9,13 +9,16 @@ class Api::PostController < ApiController
             get_model_transaction_errors(post)
             post.save!       
             data = JSON.dump(post.select_from_new)     
-            ActionCable.server.broadcast 'post_channel', nil
+            ActionCable.server.broadcast 'post_channel', {
+                type: 'NEW_POST', user_id: post.user_id
+            }
             render json: data
         end
         create_model_transaction(method)
     end
 
     def get       
+        data = params.permit(:skip, :limit).to_h
         current_user = get_session()
         posts = Post.select_data()
             .count_likes()
@@ -23,8 +26,10 @@ class Api::PostController < ApiController
             .liked_by(current_user)
             .disliked_by(current_user)            
             .group('posts.id')        
-            .order('posts.created_at DESC')    
-            .as_json               
+            .order('posts.created_at DESC')
+            .limit(data[:limit])
+            .offset(data[:skip])
+            .as_json
         result = helpers.array_to_hash_with_order(posts)       
         data = result[:hash]
         order = result[:order]            

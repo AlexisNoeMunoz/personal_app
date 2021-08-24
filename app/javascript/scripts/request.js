@@ -1,15 +1,19 @@
 
 import Rails from '@rails/ujs'
 
-const request = ({ method = 'GET', ...props }) => {        
-    props.beforeSend = (xhr, options) => {                        
-        if(props.contentType != false){
-            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
-            if(typeof props.data !== 'object') props.data = {}
-            options.data = JSON.stringify(props.data)
-        }                
-        return true        
-    }
+const request = ({ method = 'GET', ...props }) => {             
+    
+    if(method === 'GET')
+        props.data = new URLSearchParams(props.data).toString()
+    else
+        props.beforeSend = (xhr, options) => {                        
+            if(props.contentType != false){
+                if(typeof props.data !== 'object') props.data = {}                
+                xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')                            
+                options.data = JSON.stringify(props.data)                            
+            }                
+            return true        
+        }    
     return new Promise((resolve, reject) => {        
         Rails.ajax({
             ...props,        

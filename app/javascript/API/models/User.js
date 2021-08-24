@@ -24,9 +24,13 @@ const User = {
     },
     get: () => {
         return request({
-            url: 'user/get',
-            method: 'GET',            
+            url: 'user/get',              
         })
-    }
+    },
+    getCurrent: () => {
+        return request({
+            url: 'user/get_current',            
+        })
+    },
 }
 export { User }

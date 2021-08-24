@@ -1,6 +1,7 @@
 
 import methods from './methods'
 
+
 const __LIKE = (post) => {
     post.liked = !post.liked
     post.likes = post.likes + (post.liked ? 1 : -1)
@@ -21,7 +22,8 @@ const __DISLIKE = (post) => {
 
 const postReducer = (state = {}, { payload, type }) => {
     switch (type) {
-        case methods.GET: return {...payload}
+        case methods.GET: return {...payload, ...state}
+        case methods.GET_OLD: return {...state, ...payload}
         case methods.INSERT:
             state[payload.id] = payload
             return {...state}
@@ -31,25 +33,32 @@ const postReducer = (state = {}, { payload, type }) => {
         case methods.DISLIKE:
             state[payload] = __DISLIKE({ ...state[payload] })
             return {...state}
+        case methods.SET_REACTIONS:
+            state[payload.post_id] = {
+                ...state[payload.post_id], 
+                likes: payload.likes,
+                dislikes: payload.dislikes
+            }
+            return {...state}
         default: return state
     }
 }
 
 const postOrderedReducer = (state = [], { payload, type }) => {
     switch (type) {
-        case methods.GET_ORDER: return payload
+        case methods.GET_ORDER: return [...payload, ...state]
+        case methods.GET_OLD_ORDER: return [...state, ...payload]
         case methods.INSERT_ORDER: return [payload, ...state]
-        default: return state
+        default: return [...state]
     }
 }
 
-const postQuantityReducer = (state = 0, {payload, type}) => {
-    switch(type){
-        case methods.DECREMENT_NEW_POST: return state - 1
+const newPostReducer = (state = 0, {payload, type}) => {
+    switch(type){        
         case methods.INCREMENT_NEW_POST: return state + 1
         case methods.RESET_NEWS_POSTS: return 0
         default: return state
     }
 }
 
-export { postReducer, postOrderedReducer, postQuantityReducer }
+export { postReducer, postOrderedReducer, newPostReducer }

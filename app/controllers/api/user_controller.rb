@@ -40,6 +40,13 @@ class Api::UserController < ApiController
         render json: JSON.dump(users)
     end
 
+    def get_current
+        user = User.where(id: get_session())
+                    .select(:id, :name, :email, :color)
+                    .first        
+        render json: JSON.dump(user.as_json)
+    end
+
     private 
         def set_session(id)
             session[ApiController.get_session_name] = id

@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react'
 import { useDispatch, Provider } from 'react-redux'
-import configureStore from 'redux/store'
+import store from 'redux/store'
 
 import UserActions from 'redux/user/actions'
 import PostActions from 'redux/post/actions'
@@ -10,7 +10,9 @@ import { createPostChannel } from 'channels'
 
 const ReduxActionsLoader = () => {
     const dispatch = useDispatch()
+
     useEffect(() => {
+        dispatch(UserActions.GET_CURRENT())
         dispatch(UserActions.GET())
         dispatch(PostActions.GET())
 
@@ -20,7 +22,7 @@ const ReduxActionsLoader = () => {
 }
 
 const ReduxProvider = ({ children }) =>
-    <Provider store={configureStore()}>
+    <Provider store={store}>
         {children}
         <ReduxActionsLoader />
     </Provider>

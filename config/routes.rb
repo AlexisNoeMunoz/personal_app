@@ -14,6 +14,7 @@ Rails.application.routes.draw do
             delete 'logout' 
             post 'create'
             get 'get'
+            get 'get_current'
         end        
 
         namespace :post do

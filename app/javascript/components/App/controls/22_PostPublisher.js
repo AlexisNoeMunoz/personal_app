@@ -26,8 +26,7 @@ const PostPublisher = () => {
         className: 'app__POST_PUBLISHER',
         onSubmit: formHandler,
         gap: '0.5em',
-        ref: $loaderContainer,
-        maxWidth: '40em',        
+        ref: $loaderContainer,           
     }
 
     return (

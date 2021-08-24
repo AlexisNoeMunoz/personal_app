@@ -1,0 +1,52 @@
+@import 'config/variables';
+
+.TEXT_FIELD {
+    width: 100%;
+    max-width: 30em;
+
+    &__INPUT {
+        padding: 0.5em 0.8em;
+        border-radius: 5px;
+        border: 1px solid $COLOR--NEUTRAL;
+        box-shadow: $SHADOW--DARK;
+        color: $COLOR--DARK;
+        max-width: 100%;
+        appearance: none;
+        outline: none;
+        font-size: 1.4em;
+        width: 100%;
+        resize: none;
+
+        @media screen and (min-width: $MDW) {
+            font-size: 1.2em;
+        }
+    }
+
+    &__DESC.TEXT {
+        color: $COLOR--DANGER;
+        font-size: 0.9em;
+        padding-left: 0.5em;
+        font-weight: bold;
+    }
+
+    @mixin text_field_invalid_style {
+        border-color: $COLOR--DANGER;
+        box-shadow: $SHADOW--SIZE $COLOR--DANGER;
+    }
+
+    &.TEXT_FIELD--INVALID &__INPUT{
+        &:invalid {
+            @include text_field_invalid_style();
+        }
+    }
+
+    &.TEXT_FIELD--INVALID_CUSTOM_ERROR &__INPUT {
+        @include text_field_invalid_style();
+    }
+
+    &.TEXT_FIELD--REQUIRED &__INPUT {
+        border-color: $COLOR--DANGER;
+        box-shadow: $SHADOW--SIZE $COLOR--DANGER;
+    }
+
+}

@@ -1,0 +1,32 @@
+@import 'config/variables';
+
+.app__NEWS_POSTS.BUTTON_CLEAN {
+    position: fixed;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    background-color: $COLOR--ULTRA--LIGHT;
+    box-shadow: $SHADOW--SIZE 3px rgba($COLOR--DARK, 0.3);
+    width: 90%;
+    max-width: 12em;
+
+    @media screen and (min-width: $SMW) {
+        width: auto;
+        max-width: 18em;
+    }
+
+    &:hover {
+        background-color: white;
+    }    
+
+    .TEXT {
+        font-size: 0.8em;        
+        font-weight: bold;
+
+        @media screen and (min-width: $SMW) {
+            font-size: 1em;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+
+@import 'config/mixins/button';
+
+.BUTTON_GRID {
+    background-color: transparent;
+    border: none;
+    
+    display: grid;
+    justify-items: center;
+    align-items: center;    
+
+    @include button_style--default;   
+    @include button_style;
+}

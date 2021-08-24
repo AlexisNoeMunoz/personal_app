@@ -1,0 +1,58 @@
+@import 'config/variables';
+
+.home__skills {
+    &__box {    
+        height: 100%;
+        min-height: 8em;
+        padding: 1em;
+
+        border-radius: 10px;
+        background-color: $COLOR--DARK;
+
+        grid-template-rows: 1fr auto;
+        
+        @media screen and (min-width: $XLGW) {
+            min-height: 10em;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            max-width: 7em;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation-name: animation__home__skills__box__img;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+    
+            $skills: html, css, sass, responsive_design, js, react, redux,
+                jquery, ajax, mysql, mongodb, ruby,
+                ruby_on_rails, python, java, git, docker;
+    
+            @each $img in $skills {
+                &.home__skills__box__img--#{$img} {
+                    background-image: image-url('home/skills/#{$img}.svg');
+                    animation-duration: random(4) + index($skills, $img) + 4s;
+                }
+            }
+    
+            @media screen and (min-width: $LGW) {
+                max-width: 10em;
+            }
+            @media screen and (min-width: $XLGW) {
+                max-width: 12em;
+            }
+        }
+    
+        &__name.TEXT {    
+            font-weight: bold;
+            width: 100%;
+            font-size: 1em;
+    
+            @media screen and (min-width: $LGW) {
+                font-size: 1.2em;
+            }                
+        }
+    }    
+}

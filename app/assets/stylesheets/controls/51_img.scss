@@ -1,0 +1,18 @@
+@import 'config/variables';
+
+.IMG {
+    width: 100%;    
+    color: $COLOR--DARK;
+    text-align: center;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.IMG--RADIUS {
+        border-radius: 5px;
+    }
+    &.IMG--SHADOW {
+        box-shadow: $SHADOW--DARK;
+        margin: 1px;
+    }
+}

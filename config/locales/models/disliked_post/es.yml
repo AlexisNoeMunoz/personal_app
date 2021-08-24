@@ -1,0 +1,14 @@
+
+es:  
+  activerecord:
+    errors:
+      models: 
+        disliked_post:
+          attributes:            
+              user:
+                  required: 'No fue posible detectar al usuario'       
+                  taken: 'Esta publicación ya tiene tu dislike'
+              post:
+                  required: 'No fue posible encontrar la publicación'       
+              
+              

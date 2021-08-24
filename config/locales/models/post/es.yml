@@ -1,0 +1,14 @@
+
+es:  
+  activerecord:
+    errors:
+      models: 
+        post:
+          attributes:
+              message:
+                  blank: 'La publicación está vacía'                                    
+                  too_long: 'El límite de caracteres es de %{count}'
+              user:
+                  required: 'No fue posible detectar al usuario'              
+              
+              

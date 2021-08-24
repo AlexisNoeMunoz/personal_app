@@ -1,0 +1,27 @@
+@import 'config/variables';
+
+@mixin text_style--default {
+    color: $COLOR--DARK;
+    font-size: 1.2em;
+    word-break: break-word;
+    
+    @media screen and (min-width: $SMW) {
+        font-size: 1.3em;            
+    }   
+
+    @media screen and (min-width: $XLGW) {
+        font-size: 1.4em;            
+    }
+
+    b {
+        word-break: break-word;
+    }
+}
+
+@mixin text_style--light {
+    color: $COLOR--ULTRA--LIGHT;
+}
+
+@mixin text_style--neutral {
+    color: $COLOR--NEUTRAL;
+}

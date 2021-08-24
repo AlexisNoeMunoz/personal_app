@@ -1,0 +1,19 @@
+@import 'config/variables';
+
+.TAG {
+    $color: $COLOR--LIGHT;
+    
+    &--warning {
+        $color: $COLOR--WARNING;        
+    }
+
+    background-color: $color;
+    box-shadow: $SHADOW--DARK;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    justify-content: flex-start;
+
+    .TEXT {
+        color: darken($color, 30%);
+    }    
+}

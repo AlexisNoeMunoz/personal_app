@@ -1,0 +1,13 @@
+@import 'config/mixins/text';
+
+.TEXT{
+    @include text_style--default;
+
+    &.TEXT--LIGHT{
+        @include text_style--light;
+    }   
+    
+    &.TEXT--NEUTRAL{
+        @include text_style--neutral;
+    }  
+}

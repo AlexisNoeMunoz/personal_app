@@ -1,0 +1,22 @@
+@import 'config/variables';
+@import 'config/zindex';
+
+.TURBOLINKS_LOADER {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $zi-loader;    
+    background: radial-gradient(rgba($COLOR--ULTRA--LIGHT, 0.7), rgba($COLOR--NEUTRAL, 0.7));
+    backdrop-filter: blur(4px);    
+
+    .TEXT {
+        font-size: 2em;
+        font-weight: bold;
+    }
+}
+
+.turbolinks-progress-bar {
+    display: none;    
+}

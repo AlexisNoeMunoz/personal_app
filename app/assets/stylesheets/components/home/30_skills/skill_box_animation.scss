@@ -1,0 +1,21 @@
+
+@keyframes animation__home__skills__box__img {
+    0%,
+    90%,
+    100% {
+        transform: translate(0, 0) scale(100%, 100%);
+    }
+
+    93% {
+        transform-origin: center bottom;
+        transform: rotate(-30deg);
+    }
+
+    95% {
+        transform: translate(0, -0.5em) scale(120%, 120%);
+    }
+
+    98% {
+        transform: rotate(30deg);
+    }
+}

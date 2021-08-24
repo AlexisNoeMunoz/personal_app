@@ -1,0 +1,12 @@
+
+@import 'config/mixins/button';
+
+.BUTTON {
+    border: none;
+    box-shadow: $SHADOW--DARK;
+    border-radius: 5px;
+    padding: 0.5em 1em;    
+
+    @include button_style--default;   
+    @include button_style;    
+}

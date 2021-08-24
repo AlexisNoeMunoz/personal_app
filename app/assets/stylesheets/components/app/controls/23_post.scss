@@ -1,0 +1,77 @@
+@import 'config/variables';
+
+.app__POST {
+    background-color: $COLOR--ULTRA--LIGHT;
+    border-radius: 5px;
+    box-shadow: $SHADOW--DARK;
+
+    width: 100%;
+    overflow: hidden;
+
+    &__user {        
+        gap: 0.5em;
+
+        &__img {
+            --color: $COLOR--LIGHT;
+            --brightness: 0;
+            padding: 0.1em;
+            border-radius: 100%;
+            background-color: var(--color);
+            width: 2em;
+            height: 2em;
+
+            .TEXT {                
+                --brightness-calc: calc(var(--brightness) / 255 * 60 +  20);
+                color: hsl(0, 0%, calc((var(--brightness-calc) - 60) * -100%));
+                text-transform: uppercase; 
+                font-weight: bold;                            
+                font-size: 1em;
+            }
+        }
+        &__name {
+            text-transform: capitalize;
+        }
+    }
+
+    &__message {        
+        min-height: 7em;        
+        background-color: rgba(white, 0.5);        
+        border: 2px solid rgba($COLOR--DARK, 0.2);
+        border-right: none;
+        border-left: none;
+        padding: 0.5em 0.8em;        
+    }
+
+    &__like, &__dislike {
+        &__button {
+            .ICON {
+                height: 1.5em;
+                width: 1.5em;
+                filter: $FILTER--NEUTRAL;
+            }
+        }
+        &__counter.TEXT {
+            font-family: 'Arial';
+            font-size: 1.3em;                        
+        }
+    }
+
+    &__like--active {        
+        .ICON {
+            filter: $FILTER--10;
+        }
+        .TEXT {
+            color: $COLOR--10;
+        }
+    }
+
+    &__dislike--active {        
+        .ICON {
+            filter: $FILTER--DANGER;
+        }
+        .TEXT {
+            color: $COLOR--DANGER;
+        }
+    }
+
+}

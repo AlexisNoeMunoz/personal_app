@@ -1,14 +1,20 @@
-import React from 'react'
 
-const Home = () => {
+import { useRef } from 'react'
+import { useRefOnRender } from 'hooks'
+import {Floating, Cover, AboutMe, Skills, Achievements} from './components'
+
+const Home = () => {    
+    const skills = useRef()
+    const achievements = useRef()        
+    const elements = useRefOnRender([skills, achievements])
 
     return (
         <div className="home">
-            <h1>Get started with your new Rails React App</h1>
-            <div>
-                <img width='200' src="https://pbs.twimg.com/media/CZGHPChUAAA3jqE.png"/>    
-                <img width='200'src="https://res.cloudinary.com/codier/image/upload/v1530614273/jqxbwxmnrkjq0mxhnvjn.png" />
-            </div>
+            <Floating elements={elements} />
+            <Cover />
+            <AboutMe />
+            <Skills ref={skills} />
+            <Achievements ref={achievements} />            
         </div>
     )
 }

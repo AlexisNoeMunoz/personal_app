@@ -1,0 +1,15 @@
+
+@import 'config/mixins/button';
+
+.BUTTON_CLEAN {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include button_style--default;
+    @include button_style;
+}

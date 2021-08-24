@@ -1,0 +1,14 @@
+
+one:
+  id: 1
+  name: 'Test'
+  email: 'Test@Test.com'
+  password_hash: 'Test'
+  color: '123456'
+
+two:
+  id: 2
+  name: 'Test2'
+  email: 'Test2@Test2.com'
+  password_hash: 'Test2'
+  color: '123456'

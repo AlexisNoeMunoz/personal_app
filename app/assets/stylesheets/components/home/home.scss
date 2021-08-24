@@ -1,0 +1,42 @@
+@import 'config/variables';
+@import 'config/zindex';
+
+.home {
+    height: 100%;
+    width: 100%;
+    background-color: $COLOR--ULTRA--LIGHT;
+
+    @media screen and (min-width: $MDW) {
+        &>* {
+            min-height: 100%;
+        }
+    }
+
+    &__floating {
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        min-height: auto;
+        z-index: $zi-home--float_button;        
+
+        @media screen and (max-width: $MDW) {
+            &.GRID {
+                display: none;
+            }
+        }
+
+        &__button {
+            &.BUTTON_CLEAN {
+                box-shadow: $SHADOW--SIZE rgba($COLOR--NEUTRAL, 0.3);
+                border-radius: 100%;
+                font-size: 1em;
+            }
+            
+            .ICON {
+                width: 2em;
+                height: 2em;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,70 @@
+@import 'config/variables';
+@import 'config/zindex';
+
+.MODAL {
+    $pad: 1.5em;    
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    padding: 0.5em;    
+
+    background-color: rgba($COLOR--10, 0.5);
+    backdrop-filter: blur(6px);
+    z-index: $zi-controls--modal;
+
+    grid-template-rows: 100%;
+    grid-auto-flow: row;
+    
+    @media screen and (min-width: $SMW) {        
+        padding: 2em;
+    }
+
+    &__CONTAINER {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;        
+
+        background-color: $COLOR--ULTRA--LIGHT;
+        border-radius: 10px 10px; 
+        box-shadow: $SHADOW--DARK;
+        max-width: 60em;       
+        
+        @media screen and (min-width: $LGW) {
+            max-width: 70em;
+        }
+    }  
+
+    &__SCROLL {                       
+        padding: 1.5em;     
+        z-index: 1;    
+        margin: 1em 0.5em; 
+        width: calc(100% - 1em);         
+        
+        @media screen and (min-width: $MDW) {
+            padding: 3em;                        
+        }
+    }
+
+    &__CLOSE__BUTTON {        
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        box-shadow: $SHADOW--DARK;
+        z-index: 2;
+        font-size: 1em;
+
+        @media screen and (min-width: $SMW) {
+            position: absolute;
+            top: -1em;
+            right: -1em;
+            width: 3.5em;
+            height: 3.5em;            
+            border-radius: 100%;            
+        }
+
+        &__ICON {
+            filter: $FILTER--ULTRA--LIGHT;
+        }
+    }
+}

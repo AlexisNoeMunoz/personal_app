@@ -1,0 +1,20 @@
+@import 'config/variables';
+
+.TITLE {
+    color: $COLOR--DARK;
+    font-size: 2em;
+
+    @media screen and (min-width: $XSW) {
+        font-size: 2.3em;
+    }
+    @media screen and (min-width: $MDW) {
+        font-size: 2.7em;
+    }
+    @media screen and (min-width: $XLGW) {
+        font-size: 3.5em;
+    }
+
+    &.TITLE--LIGHT {
+        color: $COLOR--ULTRA--LIGHT;
+    }
+}

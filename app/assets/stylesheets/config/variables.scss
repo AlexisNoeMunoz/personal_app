@@ -1,8 +1,51 @@
 
+// DEVICE SIZES
+    // $DEFAULTW: 360px;
+    // $DEFAULTH: 640px;
 
-$color--dark: #4F576B;
-$color--neutral: #8895B8;
-$color--light: #AFC0EB;
+    $XSW: 414px;
+    $XSH: 896px;
 
-$color--main: #2F406B;
-$color--secondary: #698EEE;
+    $SMW: 601px;
+    $SMH: 962px;
+
+    $MDW: 768px;
+    $MDH: 1024px;
+    
+    $LGW: 1024px;
+    $LGH: 800px;
+    
+    $XLGW: 1240px;
+    $XLGH: 1080px;
+
+// COMMON COLORS
+    $COLOR--DARK: #3e4453;
+    $COLOR--NEUTRAL: #999999;
+    $COLOR--LIGHT: #c2c2c2;
+    $COLOR--ULTRA--LIGHT: #e2e2e2;
+
+    $COLOR--DANGER: #b00000;
+    $COLOR--DANGER--HOVER: #e60000;
+    $COLOR--WARNING: #eef400;
+    $COLOR--SUCCESS: #0bae4d;
+    $COLOR--SUCCESS--HOVER: #0ecf5b;
+    
+// PALLETE
+    $COLOR--10: #2F406B;
+    $COLOR--20: #1f2947;
+    $COLOR--30: #698EEE;
+    $COLOR--40: #AFC0EB;
+    $COLOR--50: #eee802;
+    $COLOR--60: #ed21fe;
+
+// FILTER COMMON COLORS
+    $FILTER--ULTRA--DARK: invert(23%) sepia(4%) saturate(2516%) hue-rotate(185deg) brightness(99%) contrast(87%);
+    $FILTER--NEUTRAL: invert(63%) sepia(0%) saturate(1%) hue-rotate(351deg) brightness(96%) contrast(95%);
+    $FILTER--ULTRA--LIGHT: invert(99%) sepia(0%) saturate(5289%) hue-rotate(189deg) brightness(112%) contrast(77%);
+
+    $FILTER--10: invert(20%) sepia(68%) saturate(488%) hue-rotate(185deg) brightness(100%) contrast(91%);
+    $FILTER--DANGER: invert(12%) sepia(94%) saturate(4192%) hue-rotate(4deg) brightness(86%) contrast(122%);
+
+//SHADOWS
+    $SHADOW--SIZE: 0 0 5px;
+    $SHADOW--DARK: $SHADOW--SIZE rgba($COLOR--DARK, 0.3);

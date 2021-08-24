@@ -11,10 +11,18 @@ services:
         environment: 
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: development 
+        logging:
+            options:
+                max-size: "10m"
+                max-file: "3"
    
     ruby:                      
-        image: alexisnoe27/personal_app:master
-        container_name: 'ruby'        
+        image: alexisnoe27/personal_app:dev
+        container_name: 'ruby'      
+        logging:
+            options:
+                max-size: "10m"
+                max-file: "3"  
         command: bash -c ' 
             cd rails_app &&        
             bundle update &&     

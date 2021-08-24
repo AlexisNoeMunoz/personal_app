@@ -1,0 +1,34 @@
+@import 'config/variables';
+
+.app__POST_PUBLISHER {
+    background-color: $COLOR--ULTRA--LIGHT;
+    border-radius: 5px;
+    box-shadow: $SHADOW--DARK;    
+    
+    width: 100%;      
+    overflow: hidden;
+
+    &__title {
+        background-color: rgba(white, 0.6);
+        padding: 0.5em 1em;
+        width: 100%;      
+        box-shadow: $SHADOW--DARK;  
+        font-weight: bold;
+    }
+
+    .TEXT_FIELD {        
+        max-width: none;        
+
+        &__INPUT {        
+            min-height: 8em;
+            font-size: 1.2em;
+
+            @media screen and (min-width: $MDW) {
+                min-height: 6em;
+            }            
+        }
+    }
+    .BUTTON {        
+        justify-self: end;
+    }
+}

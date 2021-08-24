@@ -1,0 +1,12 @@
+
+one:
+  id: 1
+  comment: 'Test'
+  user_id: 1
+  post_id: 1  
+
+two: 
+  id: 2
+  comment: 'Test2'
+  user_id: 2
+  post_id: 2  

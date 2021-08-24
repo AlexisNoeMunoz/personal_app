@@ -1,0 +1,37 @@
+@import 'config/variables';
+
+.home__skills {
+    background-color: $COLOR--ULTRA--LIGHT;
+    padding: 1.5em;      
+
+    @media screen and (min-width: $MDW) {
+        padding: 3em;
+    }
+
+    &__title {    
+        @media screen and (max-width: $MDW) {
+            display: none;
+        }
+    }
+
+    &__grid {    
+        max-width: 75em;
+        grid-template-columns: repeat(2, 1fr);
+    
+        @media screen and (min-width: $XSW) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    
+        @media screen and (min-width: $SMW) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    
+        @media screen and (min-width: $MDW) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media screen and (min-width: $LGW) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }    
+}

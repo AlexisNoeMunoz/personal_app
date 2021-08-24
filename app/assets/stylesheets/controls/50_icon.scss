@@ -1,0 +1,37 @@
+@import 'config/variables';
+
+.ICON {
+    width: 3em;
+    height: 3em;
+    display: inline-block;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    filter: $FILTER--ULTRA--DARK;
+
+    $styles: light, neutral;
+    @each $style in $styles {
+        &.ICON--STYLE--#{$style} {
+            @if $style==light {
+                filter: $FILTER--ULTRA--LIGHT;
+            }
+            @else if $style==neutral {
+                filter: $FILTER--NEUTRAL;
+            }
+        }        
+    }
+
+    $icons: close, arrow, shut_down, see, like;
+    @each $icon in $icons {
+        &.ICON--#{$icon} {
+            background-image: image-url('icons/#{$icon}.svg');
+        }
+    }    
+
+    &.ICON--dislike {
+        background-image: image-url('icons/like.svg');
+        transform: scaleY(-1);        
+    }
+}

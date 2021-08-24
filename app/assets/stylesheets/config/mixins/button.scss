@@ -1,0 +1,76 @@
+@import 'config/variables';
+
+@mixin button_style--default {
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1.4em;
+    text-decoration: none;
+
+    @media screen and (min-width: $MDW) {
+        font-size: 1.2em;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+@mixin create_button_style ($bg_color, $bg_color_hover, $color, $color_hover) {
+    background-color: $bg_color;
+    color: $color;
+    &:hover {
+        background-color: $bg_color_hover;
+        color: $color_hover;
+    }
+}
+
+@mixin get_button_style($style) {
+    @if $style==danger {
+        @include create_button_style($COLOR--DANGER,
+            $COLOR--DANGER--HOVER,
+            $COLOR--ULTRA--LIGHT,
+            $COLOR--ULTRA--LIGHT);
+    }
+
+    @else if $style==warning {
+        @include create_button_style($COLOR--WARNING,
+            $COLOR--WARNING,
+            $COLOR--ULTRA--LIGHT,
+            $COLOR--ULTRA--LIGHT);
+    }
+
+    @else if $style==float {
+        @include create_button_style($COLOR--20,
+            $COLOR--10,
+            $COLOR--ULTRA--LIGHT,
+            $COLOR--ULTRA--LIGHT);
+    }
+
+    @else if $style==success {
+        @include create_button_style($COLOR--SUCCESS,
+            $COLOR--SUCCESS--HOVER,
+            $COLOR--ULTRA--LIGHT,
+            $COLOR--ULTRA--LIGHT)
+    }
+
+    @else if $style==transparency {        
+        backdrop-filter: blur(8px);
+        background: radial-gradient(transparent 50%, rgba($COLOR--DARK, 0.1) 100%);
+        color: $COLOR--DARK;                
+        &:hover {
+            background: radial-gradient(rgba($COLOR--DARK, 0.1) 50%, rgba($COLOR--DARK, 0.2) 100%);            
+        }
+    }
+}
+
+@mixin button_style {
+    $styles: danger, warning, float, success, transparency;
+
+    @each $style in $styles {
+        &.BUTTON--STYLE--#{$style} {
+            @include get_button_style($style);
+        }
+    }
+}

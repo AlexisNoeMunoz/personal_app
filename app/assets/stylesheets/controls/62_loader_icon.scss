@@ -1,0 +1,38 @@
+@import 'config/variables';
+
+.LOADER_ICON {
+    --size: 2em;
+    width: var(--size);
+    height: var(--size);
+    border-width: 0.5em;
+    border-style: solid;
+    color: $COLOR--DARK;
+    border-color: currentColor;
+    border-radius: 100%;
+    border-right: none;
+    border-bottom: none;
+
+    animation-name: animation_loader_icon;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 0.6s;
+
+    &--loaded {
+        border: none;
+        background-color: currentColor;   
+        animation-name: none;
+    }
+
+    &--neutral {
+        color: $COLOR--NEUTRAL;
+    }
+}
+
+@keyframes animation_loader_icon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}

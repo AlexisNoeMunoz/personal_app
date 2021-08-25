@@ -10,7 +10,7 @@ const ContactLink = ({ icon, ...props }) => {
 }
 
 const LinkedinLink = () => 
-    <ContactLink icon='linkedin' href='https://www.linkedin.com/in/alexis-muñoz-chávez-78881b17a/' />
+    <ContactLink icon='linkedin' href='https://www.linkedin.com/in/alexis-noe-munoz/' />
 
 const GitHubLink = () => 
     <ContactLink icon='github' href='https://github.com/AlexisNoeMunoz' />   

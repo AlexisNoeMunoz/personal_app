@@ -5,7 +5,7 @@ class Post < ApplicationRecord
     has_many :disliked_posts
             
     validates :message, presence: true
-    validates :message, length: {maximum: 300}    
+    validates :message, length: {maximum: 1000}    
 
     class << self
         def select_data

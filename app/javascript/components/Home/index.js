@@ -1,12 +1,13 @@
 
 import { useRef } from 'react'
 import { useRefOnRender } from 'hooks'
-import {Floating, Cover, AboutMe, Skills, Achievements} from './components'
+import {Floating, Cover, AboutMe, Skills, Achievements, Contact} from './components'
 
 const Home = () => {    
     const skills = useRef()
     const achievements = useRef()        
-    const elements = useRefOnRender([skills, achievements])
+    const contact = useRef()
+    const elements = useRefOnRender([skills, achievements, contact])
 
     return (
         <div className="home">
@@ -14,7 +15,8 @@ const Home = () => {
             <Cover />
             <AboutMe />
             <Skills ref={skills} />
-            <Achievements ref={achievements} />            
+            <Achievements ref={achievements} />       
+            <Contact ref={contact} />     
         </div>
     )
 }

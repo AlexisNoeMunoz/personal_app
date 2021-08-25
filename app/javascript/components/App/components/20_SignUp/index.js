@@ -10,7 +10,7 @@ import { ObjectHelper } from 'helpers'
 
 const SignUp = () => {
     
-    const fields = ['user', 'email', 'password', 'confirmPassword']
+    const fields = ['name', 'email', 'password', 'confirmPassword']
     const formConfig = ObjectHelper.fillFromArray(fields,)
     formConfig.acceptPrivacyNotice = [false, useBoolState]    
     const form = useForm(formConfig)    
@@ -24,7 +24,7 @@ const SignUp = () => {
             <FormContainer className='app__sign_up__form' ref={$loaderContainer} onSubmit={signUpHandler}>
                 <Logo />
                 <Grid gap='1.5em' w100 maxWidth='23em'>
-                    <UserField state={form.user} ref={form.$user} />
+                    <UserField state={form.name} ref={form.$name} />
                     <EmailField state={form.email} ref={form.$email} />
                     <PasswordField state={form.password} ref={form.$password} />
                     <ConfirmPasswordField state={form.confirmPassword} ref={form.$confirmPassword} />

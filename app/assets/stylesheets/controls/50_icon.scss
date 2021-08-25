@@ -23,7 +23,7 @@
         }        
     }
 
-    $icons: close, arrow, shut_down, see, like;
+    $icons: close, arrow, shut_down, see, like, github, linkedin;
     @each $icon in $icons {
         &.ICON--#{$icon} {
             background-image: image-url('icons/#{$icon}.svg');

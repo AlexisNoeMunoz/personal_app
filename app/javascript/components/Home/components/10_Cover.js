@@ -21,7 +21,7 @@ const Cover = forwardRef((props, ref) => {
             </Text>
 
             <Button type='success' anchor href='app' target="_blank">
-                Ir al portafolio
+                Ir a la demo
             </Button>            
         </Grid>
     )

@@ -6,8 +6,7 @@ import {Floating, Cover, AboutMe, Skills, Achievements, Contact} from './compone
 const Home = () => {    
     const skills = useRef()
     const achievements = useRef()        
-    const contact = useRef()
-    const elements = useRefOnRender([skills, achievements, contact])
+    const elements = useRefOnRender([skills, achievements])
 
     return (
         <div className="home">
@@ -16,7 +15,7 @@ const Home = () => {
             <AboutMe />
             <Skills ref={skills} />
             <Achievements ref={achievements} />       
-            <Contact ref={contact} />     
+            <Contact />     
         </div>
     )
 }

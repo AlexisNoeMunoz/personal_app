@@ -11,7 +11,7 @@ class PostTest < ActiveSupport::TestCase
 
     test 'Message' do        
         validate_string :message, 'Mensaje', {}, {            
-            max_length: 300
+            max_length: 1000
         }
     end
 

@@ -1,6 +1,6 @@
 
 import { bool, func, object, string } from "prop-types"
-import { useWidthStyle, useWidthPropTypes, useTextFieldHandler } from "./hooks"
+import { useWidthStyle, useWidthPropTypes, useFieldHandler } from "./hooks"
 import { forwardRef } from "react"
 
 import { Grid, Text } from 'controls'
@@ -22,7 +22,7 @@ const TextField = forwardRef(({
     textarea = false,
     ...inputProps }, ref) => {
     
-    const { status, customError, $input } = useTextFieldHandler(ref, value)    
+    const { status, customError, $input } = useFieldHandler(ref, value)    
 
     const { props, style } = useWidthStyle({...containerProps, w100, maxWidth})
     className += ' TEXT_FIELD'

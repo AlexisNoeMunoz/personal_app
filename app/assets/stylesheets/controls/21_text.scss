@@ -1,7 +1,13 @@
 @import 'config/mixins/text';
 
-.TEXT{
+.TEXT {
     @include text_style--default;
+
+    .LINK {
+        font-size: 1em !important;
+        padding: 0 !important;
+        padding-bottom: 0.25em !important;
+    }
 
     &.TEXT--LIGHT{
         @include text_style--light;

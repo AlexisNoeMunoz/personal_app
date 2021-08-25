@@ -1,6 +1,6 @@
 
 import { useBoolState } from 'hooks'
-import { ButtonGrid, Modal, Title, Img, Icon, Text, Flex} from 'controls'
+import { ButtonGrid, Modal, Title, Img, Icon, Text, Flex } from 'controls'
 
 const AchievementButton = ({
     children,
@@ -10,7 +10,7 @@ const AchievementButton = ({
     alt = '',
 }) => {
 
-    const [show, setShow] = useBoolState(false)    
+    const [ show, setShow ] = useBoolState(false)
 
     const IMG_CLASS = `
         home__achievements__BUTTON
@@ -19,7 +19,7 @@ const AchievementButton = ({
     return (
         <>
             <ButtonGrid className={IMG_CLASS} onClick={setShow} gap='0.5em'>
-                <Img className='home__achievements__BUTTON__img' src={img} alt={alt} /> 
+                <Img className='home__achievements__BUTTON__img' src={img} alt={alt} />
                 <Flex gap='0.5em' alignY='center' className='home__achievements__BUTTON__mask'>
                     <Icon icon='see' type='light' />
                     <Text light >Ver</Text>
@@ -27,7 +27,7 @@ const AchievementButton = ({
             </ButtonGrid>
 
             <Modal {...{ show, setShow }} alignContentY='start' gap='1.5em'>
-                <Title align='center'>{title}</Title>                
+                <Title align='center'>{title}</Title>
                 {children}
             </Modal>
         </>
@@ -41,4 +41,4 @@ AchievementButton.protoTypes = {
     alt: string,
 }
 
-export {AchievementButton}
+export { AchievementButton }

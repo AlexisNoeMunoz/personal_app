@@ -8,17 +8,18 @@ import { ObjectHelper } from 'helpers'
 
 import PostActions from 'redux/post/actions'
 
-const PostPublisher = () => {
-    const form = useForm(ObjectHelper.fillFromArray(['message']))
+const PostPublisher = () => {    
+    const form = useForm(ObjectHelper.fillFromArray(['message'], [""]))
     const $loaderContainer = useRef()
     const dispatch = useDispatch()
     
-    const formHandler = async () => {
-        const { message } = form
+    const formHandler = async () => {        
         if (!form.__validate()) return null
+        
+        const [message, setMessage] = form.message
         const closeLoader = createLoader($loaderContainer.current)        
-        const response = await dispatch(PostActions.CREATE({message: message.value}))        
-        if(response) message.set('')
+        const response = await dispatch(PostActions.CREATE({message}))        
+        if(response) setMessage('')
         closeLoader()
     }
 

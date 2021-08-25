@@ -7,4 +7,5 @@ export * from './13_useWidthPropTypes'
 export * from './30_useButtonHandler'
 export * from './31_useButtonPropTypes'
 
-export * from './40_useTextFieldHandler'
+export * from './40_useFieldHandler'
+export * from './41_useComboBoxHandler'

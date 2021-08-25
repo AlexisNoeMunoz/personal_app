@@ -6,7 +6,7 @@ const Text = ({
     className = '',  
     light = false, 
     neutral = false,
-    w100 = false,
+    w100 = false,    
     ...props }) => {
 
     className += " TEXT"
@@ -28,7 +28,7 @@ Text.propTypes = {
     className: string,
     light: bool,
     neutral: bool,
-    w100: bool,
+    w100: bool,    
 }
 
 export {Text}

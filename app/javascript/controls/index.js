@@ -11,6 +11,8 @@ export * from './21_Text'
 export * from './22_List'
 export * from './23_ListItem'
 export * from './24_Link'
+export * from './25_Label'
+export * from './26_Subtitle'
 
 export * from './30_Button'
 export * from './31_ButtonGrid'
@@ -18,6 +20,7 @@ export * from './32_ButtonClean'
 
 export * from './40_TextField'
 export * from './41_TextArea'
+export * from './42_CheckBox'
 
 export * from './50_Icon'
 export * from './51_Img'

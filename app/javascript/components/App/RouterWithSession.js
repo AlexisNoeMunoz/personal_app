@@ -1,6 +1,6 @@
 
 import { Route, Redirect, BrowserRouter, Switch } from "react-router-dom"
-import { Home } from "components/App/components"
+import { Home, PrivacyNotice } from "components/App/components"
 import { ReduxProvider } from 'components/App/controls'
 
 const Router = () => {
@@ -11,6 +11,9 @@ const Router = () => {
                 <Switch>
                     <Route path={`${path}/inicio`} exact>
                         <Home />
+                    </Route>
+                    <Route path={`${path}/aviso_privacidad`} exact>
+                        <PrivacyNotice />
                     </Route>
                     <Route path="/">
                         <Redirect to={`${path}/inicio`} />

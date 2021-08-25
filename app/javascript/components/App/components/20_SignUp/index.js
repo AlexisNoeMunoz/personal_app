@@ -1,16 +1,20 @@
 
 import { Grid, Button, Link } from 'controls'
 import { AbstractGrid, FormContainer, Logo, AboutMeLink} from 'components/App/controls'
-import { UserField, EmailField, PasswordField, ConfirmPasswordField } from './Fields'
+import { UserField, EmailField, PasswordField, ConfirmPasswordField, AcceptPrivacyNotice } from './Fields'
 import getActions from './Actions'
 
 import { useRef } from 'react'
-import { useForm } from 'hooks'
+import { useForm, useBoolState } from 'hooks'
 import { ObjectHelper } from 'helpers'
 
 const SignUp = () => {
+    
     const fields = ['user', 'email', 'password', 'confirmPassword']
-    const form = useForm(ObjectHelper.fillFromArray(fields))
+    const formConfig = ObjectHelper.fillFromArray(fields,)
+    formConfig.acceptPrivacyNotice = [false, useBoolState]    
+    const form = useForm(formConfig)    
+
     const $loaderContainer = useRef()
     const { signUpHandler } = getActions({ form, $loaderContainer})
     const buttonsStyle = { marginTop: '1em' }
@@ -24,6 +28,7 @@ const SignUp = () => {
                     <EmailField state={form.email} ref={form.$email} />
                     <PasswordField state={form.password} ref={form.$password} />
                     <ConfirmPasswordField state={form.confirmPassword} ref={form.$confirmPassword} />
+                    <AcceptPrivacyNotice state={form.acceptPrivacyNotice} ref={form.$acceptPrivacyNotice} />
                 </Grid>
                 <Grid gap='1em' w100 style={buttonsStyle}>
                     <Button submit type='success' w100 maxWidth='10em' >

@@ -7,8 +7,8 @@ const EmailField = forwardRef(({state}, ref) =>
         placeholder='Correo electrónico'
         desc='El correo no tiene el formato correcto'
         required
-        value={state.value}
-        onChange={state.set}
+        value={state[0]}
+        onChange={state[1]}
         ref={ref}
     />)
 
@@ -16,8 +16,8 @@ const PasswordField = forwardRef(({state}, ref) =>
     <TextField type='password'
         placeholder='Contraseña'
         required
-        value={state.value}
-        onChange={state.set}
+        value={state[0]}
+        onChange={state[1]}
         ref={ref}
     />)
 

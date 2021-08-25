@@ -1,7 +1,7 @@
 
 import { useRef, useState, useImperativeHandle, useEffect } from "react"
 
-const useTextFieldHandler = (ref, value) => {
+const useFieldHandler = (ref, value) => {
     const $input = useRef()
     const [status, setStatus] = useState('')
     const [customError, setCustomError] = useState('')
@@ -28,4 +28,4 @@ const useTextFieldHandler = (ref, value) => {
     return {$input, status, customError}
 }
 
-export {useTextFieldHandler}
+export {useFieldHandler}

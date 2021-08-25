@@ -10,7 +10,7 @@ class Api::PostController < ApiController
             post.save!       
             data = JSON.dump(post.select_from_new)     
             ActionCable.server.broadcast 'post_channel', {
-                type: 'NEW_POST', user_id: post.user_id
+                type: 'NEW_POST', user_id: get_session()
             }
             render json: data
         end

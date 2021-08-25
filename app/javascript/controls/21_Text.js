@@ -1,34 +1,32 @@
 
+import { useWidthPropTypes, useWidthStyle } from './hooks'
 
 const Text = ({
-    children,
-    style = {},    
-    className = '',  
-    light = false, 
-    neutral = false,
-    w100 = false,    
-    ...props }) => {
+    children,    
+    className = '',
+    light = false,
+    neutral = false,    
+    ...preProps }) => {
 
     className += " TEXT"
-    if(light) className += ' TEXT--LIGHT'
-    else if(neutral) className += ' TEXT--NEUTRAL'
-    
-    if(w100) style['width'] = '100%'
+    if (light) className += ' TEXT--LIGHT'
+    else if (neutral) className += ' TEXT--NEUTRAL'
+
+    const {style, props} = useWidthStyle(preProps)
 
     return (
-        <p {...props} {...{className, style}}>
+        <p {...props} {...{ className, style }}>
             {children}
         </p>
     )
 }
 
-import {string, object, bool} from 'prop-types'
-Text.propTypes = {
-    style: object,
+import { string, object, bool } from 'prop-types'
+Text.propTypes = {    
     className: string,
     light: bool,
     neutral: bool,
-    w100: bool,    
+    ...useWidthPropTypes(),    
 }
 
-export {Text}
+export { Text }

@@ -5,20 +5,16 @@ import { createLoader } from 'controls'
 const getActions = ({ form, $loaderContainer}) => {
     return {
         signUpHandler: async () => {            
-            const { user, email, password, confirmPassword, $confirmPassword } = form
+            const { password, confirmPassword, $confirmPassword } = form
             const valid = form.__validate()
-            if (password.value !== confirmPassword.value) {
+            if (password[0] !== confirmPassword[0]) {
                 $confirmPassword.current.sendCustomError('Las contraseñas no coinciden')
                 return null
             }
             if(!valid) return null
 
-            const closeLoader = createLoader($loaderContainer.current)
-            await API.User.signUp({
-                name: user.value,
-                email: email.value,
-                password: password.value
-            })
+            const closeLoader = createLoader($loaderContainer.current)            
+            await API.User.signUp(form.__getData())
             closeLoader()
         }
     }

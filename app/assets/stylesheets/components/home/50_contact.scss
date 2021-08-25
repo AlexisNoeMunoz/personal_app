@@ -1,0 +1,21 @@
+@import 'config/variables';
+
+.home .home__contact {
+    background-color: $COLOR--20;
+    padding: 1em;
+    min-height: auto;    
+
+    &__button {
+        padding: 0.2em;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: rgba($COLOR--NEUTRAL, 0.2);
+        }
+
+        .ICON {
+            width: 2em;
+            height: 2em;
+        }                
+    }
+}

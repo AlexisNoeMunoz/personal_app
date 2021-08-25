@@ -17,6 +17,14 @@ const useForm = (fields = {}) => {
         })
         return !validations.includes(false)
     }
+    form.__getData = () => {
+        const values = {}
+        fieldsEntries.forEach(([key]) => {
+            const value = form[key][0]
+            values[key] = value
+        })        
+        return values
+    }
     return form
 }
 

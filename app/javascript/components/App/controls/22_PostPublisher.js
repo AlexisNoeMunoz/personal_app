@@ -9,7 +9,7 @@ import { ObjectHelper } from 'helpers'
 import PostActions from 'redux/post/actions'
 
 const PostPublisher = () => {    
-    const form = useForm(ObjectHelper.fillFromArray(['message'], [""]))
+    const form = useForm(ObjectHelper.fillFromArray(['message']))
     const $loaderContainer = useRef()
     const dispatch = useDispatch()
     
@@ -41,8 +41,8 @@ const PostPublisher = () => {
                     placeholder='¿Cómo va tu día?'
                     required                    
                     ref={form.$message}
-                    value={form.message.value}
-                    onChange={form.message.set}                    
+                    value={form.message[0]}
+                    onChange={form.message[1]}                    
                 />
                 <Button submit type='success'>
                     Publicar

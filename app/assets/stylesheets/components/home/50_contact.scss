@@ -5,6 +5,10 @@
     padding: 1em;
     min-height: auto;    
 
+    @media screen and (min-width: $MDW) {
+        display: none;
+    }
+
     &__button {
         padding: 0.2em;
         border-radius: 5px;

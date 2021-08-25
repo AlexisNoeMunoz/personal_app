@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
     root 'router#index'
-        
+    get 'cv', to: 'router#cv'
+
     scope '/app' do     
         get '/', to: 'router#app'             
         get '/:path', to: 'router#app', constraints: -> (req) do

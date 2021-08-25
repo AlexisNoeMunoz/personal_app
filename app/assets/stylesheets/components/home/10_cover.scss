@@ -52,6 +52,15 @@
             max-width: 35em;
         }
     }
+
+    &__download {
+        background-color: $COLOR--20;
+        color: $COLOR--ULTRA--LIGHT;
+
+        &:hover {
+            background-color: lighten($COLOR--20, 20%);
+        }
+    }
 }
 
 @keyframes animation__home__cover__bg {
